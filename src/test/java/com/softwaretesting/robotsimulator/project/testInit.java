@@ -40,7 +40,7 @@ public class testInit {
     }
 
     @Test
-    public void XcoordoutofBounds(){
+    public void MoveOncoordoutofBounds(){
         //We create a matrix and set the Xposition to a certain point and try to move the object beyond the array size
         //it should return false
         ProjectApplication proj = new ProjectApplication();
@@ -62,7 +62,7 @@ public class testInit {
     }
 
     @Test
-    public void YcoordoutofBounds(){
+    public void MoveOnYcoordoutofBounds(){
         //We create a matrix and set the Xposition to a certain point and try to move the object beyond the array size
         //it should return false
         ProjectApplication proj = new ProjectApplication();
@@ -80,6 +80,28 @@ public class testInit {
 
         exception = Assertions.assertThrows(IllegalArgumentException.class , () -> mat.move(5));
         Assertions.assertEquals("Robot exceeding the matrix boundaries" , exception.getMessage());
+    }
+
+    @Test
+    public void SetXcoordoutofBounds(){
+        ProjectApplication proj = new ProjectApplication();
+        proj.processFirstCommand("i 8");
+        Matrix mat = new Matrix();
+        mat.setSize(8);
+
+        IllegalArgumentException exception = Assertions.assertThrows(IllegalArgumentException.class, () -> mat.setXPosition(9));
+        Assertions.assertEquals("Illegal value for X position." , exception.getMessage());
+    }
+
+    @Test
+    public void SetYcoordoutofBounds(){
+        ProjectApplication proj = new ProjectApplication();
+        proj.processFirstCommand("i 8");
+        Matrix mat = new Matrix();
+        mat.setSize(8);
+
+        IllegalArgumentException exception = Assertions.assertThrows(IllegalArgumentException.class, () -> mat.setYPosition(9));
+        Assertions.assertEquals("Illegal value for Y position." , exception.getMessage());
     }
 
     //Right Rotation Section
