@@ -10,6 +10,7 @@ public class Matrix {
     private PEN_POSITION penPosition;
     private Integer size;
     private int[][] matrix = null;
+  //  private ROTATION rotation;
 
     public void show() {
         for (int i = getSize() - 1 ; i >= 0 ; i--) {
@@ -42,7 +43,6 @@ public class Matrix {
             case LEFT -> rotateLeft();
         }
     }
-
 	private void rotateRight() {
         if (DIRECTION.NORTH.equals(getDirection())) {
             setDirection(DIRECTION.EAST);
@@ -66,7 +66,13 @@ public class Matrix {
             setDirection(DIRECTION.NORTH);
         }
     }
+   /* public ROTATION getRotation() {
+        return this.rotation;
+    }
 
+    public void setRotation(ROTATION rotation) {
+        this.rotation = rotation;
+    }*/
     public void move(Integer steps) {
         switch (getDirection()) {
             case EAST -> moveEast(steps);
