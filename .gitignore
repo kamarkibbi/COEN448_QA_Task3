@@ -35,3 +35,4 @@ replay_pid*
 .project
 .settings/
 bin/
+/.clover/

@@ -1,5 +1,6 @@
-package com.softwaretesting.robotsimulator.project;
+package QATests;
 
+import com.softwaretesting.robotsimulator.project.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 public class testInit {
