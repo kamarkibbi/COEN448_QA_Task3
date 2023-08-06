@@ -42,6 +42,7 @@ public class ProjectApplication {
 		if (!"m".equalsIgnoreCase(commandSplit[0]) && commandSplit.length != 1) {
 			throw new IllegalArgumentException("Invalid command!");
 		}
+
 		switch (commandSplit[0]) {
 			case "c" , "C" -> matrix.printPosition();
 			case "d" , "D" -> matrix.changePenPosition(PEN_POSITION.DOWN);
